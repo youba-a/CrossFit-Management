@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --couleur-primaire: #FDFEFF;
+    --couleur-primaire-small-variation: #f3f5f7; 
+    --couleur-secondaire: #F2F2F2;
+    --couleur-secondaire-small-variation: #e4e4e4;
+    --couleur-navbar: #1EACE3;
+    --texte-clair: #FAFAFA;
+    --texte-gris: #DBDCDD;
+    --texte-gris-fonce: #363636;
+    --texte-fonce: #151515;
+    --texte-fonce-small-variation: #272727;
+}
+
+html {
+    font-size: 1rem;
+    color: var(--texte-gris-fonce);
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color: var(--couleur-primaire);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body main #about img {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+body main #discovery img {
+    height: 84%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+body #modifyProduct img {
+    max-width: 300px;
+}
+
+header nav{
+    background-color: var(--couleur-navbar);
+}
+
+header nav h1 {
+    font-size: 0.5rem;
+    color: var(--couleur-navbar);
+}
+
+.visuallyhidden:not(:focus):not(:active) {
+  top: 5px;           /* position verticale */
+  left: 20px;          /* position horizontale */
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  user-select: none;
+}
+
+/* solution officielle recommandée par Vue.js 
+pour cacher les éléments v-if, etc... avant que vue.js n'ai eu fini de charger*/
+[v-cloak] {
+  display: none !important;
+}
+
+.responsive {
+  width: 75%;
+}
+
+header nav.navbar .navbar-nav .nav-link {
+    font-weight: bold;
+    color: var(--texte-fonce);
+}
+
+header nav.navbar .navbar-nav .nav-link:hover {
+    color: var(--texte-fonce-small-variation);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/* taille du logo du site */
+header nav #headerLogo img {
+    width: 80px;
+    user-select: none;
+}
+
+/* Empêche l'avatar de perturber l'alignement des autres éléments */
+#userBannerApp .nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%; /* même hauteur que les autres liens */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Taille raisonnable de l’avatar dans la navbar */
+#userBannerApp #headerLogoAvatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    user-select: none;
+}
+
+/* Ajustement vertical global du dropdown */
+#userBannerApp .dropdown {
+    display: flex;
+    align-items: center;
+}
+
+
+#userBannerApp i.bi-person-circle {
+    font-size: 40px;        /* même taille que ton avatar 36px */
+    line-height: 40px;      /* centre l’icône verticalement */
+    vertical-align: middle; /* ajuste l’alignement avec le texte */
+}
+
+footer {
+    background-color: var(--couleur-secondaire);
+}
+
+p{
+    color: var(--texte-gris-fonce);
+}
+
+h1 {
+    font-size: 4.236rem;
+}
+
+h2{
+    font-size: 2.618rem;
+    margin: 2rem 0;
+    color: var(--texte-fonce);
+}
+
+h3{
+    font-size: 1.618rem;
+    margin: 1rem 0;
+    color: var(--texte-gris-fonce);
+}
+
+body main #discovery {
+    background-color: var(--couleur-secondaire);
+}
+
+/* carrousel page accueil */
+
+body main #carousel .banner-container {
+    overflow: hidden;
+    width: 100%;
+    background: #000;
+  }
+
+body main #carousel .banner-track {
+display: flex;
+animation: scroll 40s linear infinite;
+}
+
+body main #carousel .banner-track img {
+height: 200px; /* ajuster la hauteur de la banderole */
+object-fit: cover;
+cursor: grab;
+}
+
+@keyframes scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); } /* défiler sur la moitié du contenu pour boucler */
+}
+
+.copyrightLink {
+    color: var(--texte-gris-fonce);
+}
+
+/* couleurs modal */
+.modal-content {
+    background-color: var(--couleur-primaire);
+}
+
+.modal-header h5 {
+    color: var(--texte-fonce);
+}
+
+.modal-content .modal-body label.form-label {
+  color: var(--texte-gris-fonce);
+}
+
+/* dashboard adhéran */
+body main #sidebar {
+    background-color: var(--couleur-secondaire);
+}
+
+#addProduct label,
+#modifyProduct label{
+    color: var(--texte-clair);
+}
+
+/* calendar*/
+
+/* Désactive la couleur bleue et le soulignement des jours */
+.fc-col-header-cell a {
+color: inherit !important;        /* garde la couleur du texte normal */
+text-decoration: none !important; /* supprime le souligné */
+}
+
+/* ---------- 1) Supprime les pointillés demi-heure partout ---------- */
+    /* Corps de la grille */
+    .fc .fc-timegrid-slot-lane.fc-timegrid-slot-minor,
+    .fc .fc-timegrid-slot-minor {
+      border-top: none !important;
+      border-top-style: none !important;
+      border-top-width: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      background-image: none !important;
+    }
+
+    /* Colonne des labels horaires (axe de gauche) */
+    .fc .fc-timegrid-axis .fc-timegrid-slot.fc-timegrid-slot-minor,
+    .fc .fc-timegrid-axis .fc-timegrid-slot-minor {
+      border-top: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    /* Pseudo-éléments éventuels (sécurise contre les décorations) */
+    .fc .fc-timegrid-slot-minor::before,
+    .fc .fc-timegrid-slot-minor::after {
+      display: none !important;
+    }
+
+    /* ---------- 2) Empêche l'étirement de la dernière ligne ---------- */
+    /* Désactive l'expansion automatique des lignes (FullCalendar option) + sécurité CSS */
+    #calendar { height: auto !important; }
+    .fc .fc-timegrid { height: auto !important; }
+    .fc .fc-scroller { max-height: none !important; }
+
+/* Tous les événements FullCalendar */
+.fc-event {
+  cursor: pointer; /* change le curseur en main */
+}
+
+/* couleurs pour les tableau striped */
+body main table.table-striped tbody tr:nth-of-type(odd) > *{
+  background-color: var(--couleur-secondaire-small-variation);
+}
+
+body main table.table-striped tbody tr:nth-of-type(even) > * {
+  background-color: var(--couleur-secondaire);
+}
+
+.table-striped th,
+.table-striped td {
+  color: var(--texte-fonce-small-variation);
+}
+
+/* couleur de fond pour le header du tableau admin*/
+#tableOwnerManageUsers thead {
+background-color: var(--couleur-secondaire);
+}
+
+/* couleur de fond pour les lignes du tableau admin*/
+#tableOwnerManageUsers tbody tr {
+background-color: var(--couleur-secondaire-small-variation);
+}
+
+/* Boutons de même taille dans la page product_detail */
+
+.same-width-btn {
+    width: 320px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Couleurs custom pour les boutons bootstrap */
+
+.btn-primary-color,
+.btn-primary-color:active,
+.btn-primary-color:focus{
+    background-color: var(--couleur-primaire);
+    border-color: var(--couleur-primaire);
+    color: var(--texte-clair);
+}
+
+.btn-primary-color:hover {
+    background-color: var(--couleur-primaire-small-variation);
+    border-color: var(--couleur-primaire);
+    color: var(--texte-clair);
+}
+
+.btn-secondary-color,
+.btn-secondary-color:active,
+.btn-secondary-color:focus {
+    background-color: var(--couleur-secondaire);
+    border-color: var(--couleur-secondaire);
+    color: var(--texte-clair);
+}
+
+.btn-secondary-color:hover {
+    background-color: var(--couleur-secondaire-small-variation);
+    border-color: var(--couleur-secondaire);
+    color: var(--texte-clair);
+}
+
+/* guest page coach presentation */
+
+
+#guestListOfCoach {
+    background-color: var(--couleur-primaire-small-variation);
+    padding: 40px 0;
+}
+
+#guestListOfCoach h2 {
+    color: var(--texte-fonce);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+#guestListOfCoach p.text-muted {
+    color: var(--texte-gris-fonce);
+}
+
+.coach-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--couleur-primaire);
+    border: 2px solid var(--couleur-navbar);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.coach-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.coach-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--couleur-navbar);
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Conteneur de l'icône */
+.coach-avatar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* supprime tout fond */
+    position: relative;
+}
+
+/* Icône centrée parfaitement */
+.coach-avatar-icon i {
+    font-size: 110px;
+    line-height: 1;
+    position: relative;
+    background: transparent;
+    top: 2px; /* petit ajustement visuel pour centrage vertical parfait */
+    color: var(--couleur-navbar);
+}
+
+.coach-info {
+    flex: 1;
+}
+
+.coach-info h5 {
+    font-size: 1.25rem;
+    color: var(--texte-fonce);
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.coach-info .specialisation {
+    font-style: italic;
+    color: var(--texte-gris-fonce);
+    margin-bottom: 0.3rem;
+}
+
+.coach-info .niveau {
+    background-color: var(--couleur-navbar);
+    color: var(--texte-clair);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Layout 2 colonnes */
+#teamApp .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 25px;
+}
+
+/* ---- Page tarif---- */
+#tarif {
+  background-color: var(--couleur-primaire);
+  color: var(--texte-fonce);
+}
+
+/* ---- Carte tarif---- */
+.tarif-card {
+  background: var(--couleur-secondaire);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid var(--couleur-secondaire-small-variation);
+}
+
+.tarif-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(30, 172, 227, 0.15);
+  border-color: var(--couleur-navbar);
+}
+
+/* ---- Tarif Header ---- */
+.tarif-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.tarif-nom {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--texte-fonce-small-variation);
+}
+
+.tarif-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--couleur-navbar);
+}
+
+.tarif-price .euro {
+  font-size: 1rem;
+  color: var(--texte-gris-fonce);
+  margin-left: 4px;
+}
+
+/* ---- Tarif Body ---- */
+.tarif-body {
+  text-align: center;
+  color: var(--texte-gris-fonce);
+  line-height: 1.6;
+  font-size: 1rem;
+  min-height: 90px;
+}
+
+/* ---- Tarif Footer ---- */
+.tarif-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-abo {
+  background: var(--couleur-navbar);
+  color: var(--texte-clair);
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-abo:hover {
+  background: #1a9bd0;
+  transform: scale(1.05);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .tarif-card {
+    padding: 1.5rem;
+  }
+
+  .tarif-price {
+    font-size: 1.6rem;
+  }
+}

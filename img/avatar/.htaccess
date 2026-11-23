@@ -1,0 +1,18 @@
+# Bloquer l’exécution de tout script
+<FilesMatch "\.(php|php[0-9]*|phtml|pl|py|jsp|asp|sh|cgi)$">
+    Require all denied
+</FilesMatch>
+
+# Interdire la navigation dans le dossier
+Options -Indexes
+
+# Ajouter un type mime sûr pour les images uniquement
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif
+AddType image/webp .webp
+
+# Activer la protection contre le script embedding
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
